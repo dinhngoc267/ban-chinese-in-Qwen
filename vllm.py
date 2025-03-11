@@ -1,9 +1,8 @@
 import torch
 from vllm import LLM, SamplingParams
 from vllm.transformers_utils.tokenizer import get_tokenizer
-from vllm.utils import LogitsProcessor
 
-class BanChineseProcessor(LogitsProcessor):
+class BanChineseProcessor:
     """ A custom logits processor to ban Chinese characters. """
     
     def __init__(self, tokenizer):
